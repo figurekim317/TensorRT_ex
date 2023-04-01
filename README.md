@@ -1,4 +1,4 @@
-# TensorRT_EX
+# TensorRT_example
 
 ## Enviroments
 ***
