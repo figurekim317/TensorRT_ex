@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="utils.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="plugin_ex1.cpp" />
+    <ClCompile Include="vgg11.cpp" />
+    <ClCompile Include="calibrator.cpp">
+      <Filter>calibrate</Filter>
+    </ClCompile>
+    <ClCompile Include="common.cpp">
+      <Filter>calibrate</Filter>
+    </ClCompile>
+    <ClCompile Include="unet.cpp" />
+    <ClCompile Include="detr_trt.cpp" />
+    <ClCompile Include="yolov5s.cpp" />
+    <ClCompile Include="real-esrgan.cpp" />
+    <ClCompile Include="resnet18.cpp" />
+    <ClCompile Include="yolov6.cpp" />
+    <ClCompile Include="yolov7.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="preprocess.hpp">
+      <Filter>plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="logging.hpp">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.hpp">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="calibrator.h">
+      <Filter>calibrate</Filter>
+    </ClInclude>
+    <ClInclude Include="common.hpp">
+      <Filter>calibrate</Filter>
+    </ClInclude>
+    <ClInclude Include="yololayer.hpp">
+      <Filter>plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="postprocess.hpp">
+      <Filter>plugin</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="plugin">
+      <UniqueIdentifier>{b08e34f0-7631-4bd6-b666-41b735a20001}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils">
+      <UniqueIdentifier>{1f6f354d-a2df-47f0-af86-7d80e4dc7112}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="calibrate">
+      <UniqueIdentifier>{ee66ee0e-fda5-4789-9e05-a50d9fe108f7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="preprocess.cu">
+      <Filter>plugin</Filter>
+    </CudaCompile>
+    <CudaCompile Include="postprocess.cu">
+      <Filter>plugin</Filter>
+    </CudaCompile>
+    <CudaCompile Include="yololayer.cu">
+      <Filter>plugin</Filter>
+    </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md" />
+  </ItemGroup>
+</Project>
