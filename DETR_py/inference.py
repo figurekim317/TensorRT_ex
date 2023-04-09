@@ -2,8 +2,6 @@ import math
 import struct
 import cv2
 import time
-
-
 from PIL import Image
 import requests
 import matplotlib.pyplot as plt
