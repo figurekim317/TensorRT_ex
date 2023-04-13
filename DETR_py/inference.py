@@ -1,5 +1,3 @@
-
-
 import math
 import struct
 import cv2
