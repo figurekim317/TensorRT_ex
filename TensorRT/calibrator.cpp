@@ -5,7 +5,7 @@
 #include "calibrator.h"
 #include "cuda_runtime_api.h"
 #include "common.hpp"		
-  #include <opencv2/opencv.hpp>
+#include <opencv2/opencv.hpp>
 
 // CUDA RUNTIME API 에러 체크를 위한 매크로 함수 정의
 #define CHECK(status) \
