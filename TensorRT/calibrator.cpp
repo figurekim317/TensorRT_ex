@@ -5,9 +5,9 @@
 #include "calibrator.h"
 #include "cuda_runtime_api.h"
 #include "common.hpp"		
-#include <opencv2/opencv.hpp>
+  #include <opencv2/opencv.hpp>
 
-// CUDA RUNTIME API ¿¡·¯ Ã¼Å©¸¦ À§ÇÑ ¸ÅÅ©·Î ÇÔ¼ö Á¤ÀÇ
+// CUDA RUNTIME API ì—ëŸ¬ ì²´í¬ë¥¼ ìœ„í•œ ë§¤í¬ë¡œ í•¨ìˆ˜ ì •ì˜
 #define CHECK(status) \
     do\
     {\
@@ -80,9 +80,9 @@ bool Int8EntropyCalibrator2::getBatch(void* bindings[], const char* names[], int
 			}
 			int ori_w = ori_img.cols;
 			int ori_h = ori_img.rows;
-			if (ori_h == ori_w) { // ÀÔ·ÂÀÌ¹ÌÁö°¡ Á¤»ç°¢ÇüÀÏ °æ¿ì
+			if (ori_h == ori_w) { // ì…ë ¥ì´ë¯¸ì§€ê°€ ì •ì‚¬ê°í˜•ì¼ ê²½ìš°
 				cv::Mat img_r(input_h_, input_w_, CV_8UC3);
-				cv::resize(ori_img, img_r, img_r.size(), cv::INTER_LINEAR); // ¸ğµ¨ »çÀÌÁî·Î ¸®»çÀÌÁî
+				cv::resize(ori_img, img_r, img_r.size(), cv::INTER_LINEAR); // ëª¨ë¸ ì‚¬ì´ì¦ˆë¡œ ë¦¬ì‚¬ì´ì¦ˆ
 				memcpy(input_imgs_.data() + (i - img_idx_) * input_size_, img_r.data, input_size_);
 			}
 			else {
@@ -122,9 +122,9 @@ bool Int8EntropyCalibrator2::getBatch(void* bindings[], const char* names[], int
 			int ori_w = ori_img.cols;
 			int ori_h = ori_img.rows;
 
-			if (ori_h == ori_w) { // ÀÔ·ÂÀÌ¹ÌÁö°¡ Á¤»ç°¢ÇüÀÏ °æ¿ì
+			if (ori_h == ori_w) { // ì…ë ¥ì´ë¯¸ì§€ê°€ ì •ì‚¬ê°í˜•ì¼ ê²½ìš°
 				cv::Mat img_r(input_h_, input_w_, CV_8UC3);
-				cv::resize(ori_img, img_r, img_r.size(), cv::INTER_LINEAR); // ¸ğµ¨ »çÀÌÁî·Î ¸®»çÀÌÁî
+				cv::resize(ori_img, img_r, img_r.size(), cv::INTER_LINEAR); // ëª¨ë¸ ì‚¬ì´ì¦ˆë¡œ ë¦¬ì‚¬ì´ì¦ˆ
 				memcpy(input_imgs_.data() + (i - img_idx_) * input_size_, img_r.data, input_size_);
 			}
 			else {
@@ -132,7 +132,7 @@ bool Int8EntropyCalibrator2::getBatch(void* bindings[], const char* names[], int
 				int	new_h = (int)(round(ori_h * ratio));
 				int	new_w = (int)(round(ori_w * ratio));
 				cv::Mat img_r(new_h, new_w, CV_8UC3);
-				cv::resize(ori_img, img_r, img_r.size(), cv::INTER_LINEAR); // Á¤ÇÕ¼º ÀÏÄ¡
+				cv::resize(ori_img, img_r, img_r.size(), cv::INTER_LINEAR); // ì •í•©ì„± ì¼ì¹˜
 				//int dh = (INPUT_H - new_h) % 32;
 				//int dw = (INPUT_W - new_w) % 32;
 				int dh = (input_h_ - new_h);
